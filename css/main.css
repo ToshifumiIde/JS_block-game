@@ -1,3 +1,41 @@
-.start{
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  overflow: hidden;
+}
+
+body {
+  box-sizing: border-box;
+  /* background: url(../img/block.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%; */
+  height: 100vh;
+}
+canvas {
+  width: 80%;
+  max-width: 500px;
+  height: 350px;
+}
+
+.title,
+.level,
+.clear {
   text-align: center;
+}
+
+.level {
+  /* background-color: blue; */
+  padding: 20px;
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
 }

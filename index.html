@@ -4,11 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.css">
-  <title>Document</title>
+  <title>ブロック崩しゲーム</title>
 </head>
 <body>
-  <div class="start">Click To Start</div>
-  
+  <div class="wrap">
+    <div class="title">
+      <h1>
+        ブロック崩しゲーム
+      </h1>
+    </div>
+    <div class="level">
+      <p>ゲーム難易度選択を選択してください</p>
+      <button class="btn" id="beginner">初級:ブロック数2</button>
+      <button class="btn" id="intermediate">中級:ブロック数5</button>
+      <button class="btn" id="advanced">上級:ブロック数8</button>
+    </div>
+    <canvas id="canvas">
+      Canvas・JavaScriptが非対応の場合、ゲームで遊べません
+    </canvas>
+    <div class="clear">
+      <button class="btn" id="reset">リセット</button>
+    </div>
+  </div>
   <script src="./js/main.js"></script>
 </body>
 </html>
