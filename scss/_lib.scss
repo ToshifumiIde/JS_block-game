@@ -1,0 +1,218 @@
+//////////////
+//sassの雛形//
+//////////////
+@mixin sp {
+  @media (max-width: 570px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: 571px) and (max-width: 989px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (min-width: 990px) {
+    @content;
+  }
+}
+
+.sp {
+  @include tab {
+    display: none;
+  }
+  @include pc {
+    display: none;
+  }
+}
+.tab {
+  @include sp {
+    display: none;
+  }
+}
+
+//////////////
+//変数の設定//
+//////////////
+$blue: rgb(63, 123, 226);
+$lightBlue: rgb(107, 178, 255);
+$navy: rgb(5, 5, 84);
+
+html {
+  color: $navy;
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin-top: 3rem;
+  box-sizing: border-box;
+  position: relative;
+}
+#mask {
+  background-color: rgba(50, 50, 50, 0.4);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  transition: 0.3s;
+  z-index: 10;
+  &.hidden {
+    display: none;
+  }
+}
+.wrap {
+  max-width: 124rem;
+  height:100vh;
+  max-height:120rem;
+  margin: 0 auto;
+  position: relative;
+}
+.return {
+  position: absolute;
+  right: 20%;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border: 0.1rem solid #cfcfcf;
+  background-color: #efefef;
+  text-align: center;
+  line-height: 5rem;
+  transform: translate(-50%, -50%);
+  @include sp {
+    top: 80%;
+  }
+  @include tab {
+    top: 85%;
+  }
+  @include pc {
+    top: 90%;
+  }
+}
+
+h1 {
+  @include sp {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+  }
+  @include tab {
+    font-size: 3.6rem;
+    margin-bottom: 2.4rem;
+  }
+  @include pc {
+    font-size: 4rem;
+    margin-bottom: 3.2rem;
+  }
+}
+
+.selectLevel {
+  text-align: center;
+  @include sp {
+    font-size: 1.6rem;
+  }
+  @include tab {
+    font-size: 2rem;
+  }
+  @include pc {
+    font-size: 2rem;
+  }
+}
+
+.title,
+.clear {
+  text-align: center;
+}
+
+.level {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  @include sp {
+    width: 100%;
+    margin-bottom: 1.6rem;
+  }
+  @include tab {
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+  @include pc {
+    margin-bottom: 2rem;
+    width: 60%;
+  }
+}
+
+.caution {
+  color: $blue;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.close,
+.btn {
+  cursor: pointer;
+  background-color: $lightBlue;
+  border: 0.2rem solid $blue;
+  border-radius: 2.4rem;
+  color: $blue;
+  line-height: 4rem;
+  margin: 0 auto;
+  user-select: none;
+  @include sp {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0.4rem 0;
+    width: 30%;
+  }
+  @include tab {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    padding: 1.2rem 0rem;
+    width: 14rem;
+  }
+  @include pc {
+    font-size: 1.6rem;
+    width: 16rem;
+  }
+  &:hover {
+    border: 0.2rem solid $navy;
+    color: $navy;
+    background-color: rgb(200, 220, 255);
+  }
+}
+
+.finished {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: block;
+  font-size: 20px;
+  min-height: 15rem;
+  min-width: 40rem;
+  margin: 0 auto;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  opacity: 1;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  z-index: 20;
+  &.hidden {
+    opacity: 0;
+    top: 51%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.finishedMessage1,
+.finishedMessage2 {
+  display: inline-block;
+  font-size: 30px;
+  margin-bottom: 20px;
+}

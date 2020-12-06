@@ -7,24 +7,42 @@
   <title>ブロック崩しゲーム</title>
 </head>
 <body>
+  <div id="mask" class="hidden"></div>
   <div class="wrap">
     <div class="title">
       <h1>
         ブロック崩しゲーム
       </h1>
     </div>
+    <p class="selectLevel">ゲーム難易度選択を選択してください</p>
     <div class="level">
-      <p>ゲーム難易度選択を選択してください</p>
-      <button class="btn" id="beginner">初級:ブロック数2</button>
-      <button class="btn" id="intermediate">中級:ブロック数5</button>
-      <button class="btn" id="advanced">上級:ブロック数8</button>
+      <div class="btn" id="beginner">
+        初級<span class="tab">:</span>
+        <br class="sp">
+        ブロック行2
+      </div>
+      <div class="btn" id="intermediate">
+        中級<span class="tab">:</span>
+        <br class="sp">
+        ブロック行5
+      </div>
+      <div class="btn" id="advanced">
+        上級<span class="tab">:</span>
+        <br class="sp">
+        ブロック行7
+      </div>
     </div>
-    <canvas id="canvas">
+    <canvas id="canvas" width="500px" height="300px">
       Canvas・JavaScriptが非対応の場合、ゲームで遊べません
     </canvas>
-    <div class="clear">
-      <button class="btn" id="reset">リセット</button>
+    <p class="caution">※このゲームは画面幅500px以上での実行を推奨します※</p>
+    <div id="finished" class="finished hidden">
+      <span id="finishedMessage1" class="finishedMessage1"></span>
+      <br>
+      <span id="finishedMessage2" class="finishedMessage2"></span>
+      <div id="close" class="close">閉じる</div>
     </div>
+    <a class="return" href="#" >戻る</a>
   </div>
   <script src="./js/main.js"></script>
 </body>
